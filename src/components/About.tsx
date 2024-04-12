@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <div className="h-screen" id="about">
-      <div className="flex flex-col text-center gap-1">
+      <div className="flex flex-col text-center gap-1 sm:mt-0 mt-[10%]">
         <span className="text-md font-medium text-purple-800">
           Explore What's Unique
         </span>

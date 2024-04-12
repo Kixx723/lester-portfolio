@@ -1,7 +1,7 @@
 const Experience = () => {
   return (
     <div className="h-screen" id="experience">
-      <div className="flex flex-col text-center gap-1">
+      <div className="flex flex-col text-center gap-1 sm:mt-0 mt-[18%]">
         <span className="text-md font-medium text-purple-800">Discover My</span>
         <span className="text-4xl">Experience</span>
       </div>
