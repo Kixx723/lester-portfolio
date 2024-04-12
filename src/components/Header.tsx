@@ -15,7 +15,10 @@ const Header = () => {
           <span>Lester</span>
         </div>
 
-        <div className="mt-2 cursor-pointer md:hidden" onClick={isToggle}>
+        <div
+          className="mt-2 cursor-pointer md:hidden relative transition-opacity duration-300"
+          onClick={isToggle}
+        >
           {isOpen ? (
             <span className="material-symbols-outlined md:hidden">close</span>
           ) : (
@@ -40,10 +43,37 @@ const Header = () => {
             </Link>
           </li>
           <li className="pb-2 hover:text-purple-400 hover:border-b-4 hover:border-purple-300 cursor-pointer">
-            Contact
+            <Link to="contact" smooth={true} duration={500} offset={-50}>
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
+
+      {isOpen ? (
+        <div className="w-32 shadow-lg shadow-purple-500 list-none p-3 font-semibold absolute right-3 bg-white">
+          <li className="pb-2 hover:text-purple-400 hover:border-b-4 hover:border-purple-300 cursor-pointer">
+            <Link to="about" smooth={true} duration={500} offset={-50}>
+              About
+            </Link>
+          </li>
+          <li className="pb-2 hover:text-purple-400 hover:border-b-4 hover:border-purple-300 cursor-pointer">
+            <Link to="experience" smooth={true} duration={500} offset={-50}>
+              Experience
+            </Link>
+          </li>
+          <li className="pb-2 hover:text-purple-400 hover:border-b-4 hover:border-purple-300 cursor-pointer">
+            <Link to="projects" smooth={true} duration={500} offset={-50}>
+              Projects
+            </Link>
+          </li>
+          <li className="pb-2 hover:text-purple-400 hover:border-b-4 hover:border-purple-300 cursor-pointer">
+            <Link to="contact" smooth={true} duration={500} offset={-50}>
+              Contact
+            </Link>
+          </li>
+        </div>
+      ) : null}
     </nav>
   );
 };
