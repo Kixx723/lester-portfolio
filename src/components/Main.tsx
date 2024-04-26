@@ -20,7 +20,7 @@ const Main = () => {
           </button>
           <div className="flex gap-2 mt-2">
             <a
-              href="https://www.linkedin.com/in/john-lester-regalado-147847271/"
+              href="https://www.linkedin.com/in/john-lester-regalado/"
               target="_blank"
             >
               <img
