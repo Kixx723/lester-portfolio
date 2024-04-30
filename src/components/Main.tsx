@@ -14,7 +14,7 @@ const Main = () => {
         <span className="text-2xl font-normal">Full Stack Developer</span>
         <div className="flex gap-3 mt-3 justify-center">
           <button className="border-2 border-black p-3 rounded-3xl text-sm font-bold hover:bg-black hover:text-white">
-          <a href="https://drive.google.com/file/d/1J0nZmb4oSrLQQk7z_NsCrAA1sIodoYgC/view?usp=drive_link" target="_blank" download="Lester-Resume.pdf">
+          <a href="https://drive.google.com/file/d/1qKo6Yi5xr9eV6lo6peovkXE045JaZdaE/view?usp=drive_link" target="_blank" download="Lester-Resume.pdf">
             Download CV
           </a>
           </button>
