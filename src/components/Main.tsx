@@ -1,4 +1,4 @@
-import PROFILE from "../assets/ayano.jpg";
+import PROFILE from "../assets/profile-lester2.jpg";
 import LINKEDIN from "../assets/linked-in.png";
 import GITHUB from "../assets/github.png";
 
@@ -11,7 +11,7 @@ const Main = () => {
       <div className="flex flex-col gap-1 text-center mt-16">
         <span className="text-lg font-normal">Hello, I'm</span>
         <span className="text-3xl font-bold">John Lester Regalado</span>
-        <span className="text-2xl font-normal">Full Stack Web Developer</span>
+        <span className="text-2xl font-normal">Full Stack Developer</span>
         <div className="flex gap-3 mt-3 justify-center">
           <button className="border-2 border-black p-3 rounded-3xl text-sm font-bold hover:bg-black hover:text-white">
           <a href="https://drive.google.com/file/d/1J0nZmb4oSrLQQk7z_NsCrAA1sIodoYgC/view?usp=drive_link" target="_blank" download="Lester-Resume.pdf">
