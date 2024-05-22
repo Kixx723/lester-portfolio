@@ -56,7 +56,7 @@ const Projects = () => {
             />
             <span className="font-bold text-2xl">3rd Project</span>
             <a
-              href="https://gscwd-itank.vercel.app/"
+              href="https://mrtankee.vercel.app/"
               target="_blank"
               className="border-2 mx-[30%] py-2 px-4 rounded-3xl border-black font-semibold hover:bg-black hover:text-white cursor-pointer"
             >
