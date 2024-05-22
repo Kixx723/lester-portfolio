@@ -1,6 +1,6 @@
 import ETALLY from "../assets/e-tally-htc.png";
 import BORROWERSLIP from "../assets/borrower-slip.png";
-import MRTANKEE from "../assets/mrtankee.png";
+import MRTANKEE from "../assets/mrtankee-project.png";
 
 const Projects = () => {
   return (
