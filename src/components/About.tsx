@@ -1,49 +1,41 @@
 const About = () => {
   return (
-    <div className="h-screen" id="about">
-      <div className="flex flex-col text-center gap-1 sm:mt-0 mt-[10%]">
-        <span className="text-md font-medium text-purple-800">
-          Explore What's Unique
-        </span>
-        <span className="text-4xl">About Me</span>
-      </div>
+    <section className="py-48 lg:py-24 bg-white" id="about">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Side: Bold Heading with Accent */}
+          <div className="relative">
+            {/* The same accent box style from your Main component */}
+            <div className="absolute inset-0 bg-indigo-50 rounded-[2.5rem] -translate-x-3 translate-y-3 -z-10" />
 
-      <div className="flex flex-col mx-4 sm:mx-10 md:mx-[15%] md:my-[3%] mt-[3%] gap-8 md:gap-10 text-center justify-center">
-        <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-10">
-          <div className="border-2 border-black rounded-2xl w-full md:w-96 flex flex-col justify-center items-center p-4">
-            <span className="material-symbols-outlined text-lg">
-              business_center
-            </span>
-            <span className="md:text-xl text-lg font-bold">Experience</span>
-            <span className="font-semibold">2+ years</span>
-            <span className="font-semibold">Full Stack Web Development</span>
+            <div className="bg-white border border-slate-100 p-8 md:p-12 rounded-[2.5rem] shadow-sm">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
+                Beyond <br />
+                <span className="text-indigo-600">the Code.</span>
+              </h2>
+            </div>
           </div>
-          <div className="border-2 border-black rounded-2xl w-full md:w-96 flex flex-col justify-center items-center p-4">
-            <span className="material-symbols-outlined text-lg">school</span>
-            <span className="md:text-xl text-lg font-bold">Education</span>
-            <span className="font-semibold">
-              Bachelor Science in Information Technology
-            </span>
-            <span className="font-semibold">
-              Holy Trinity College of General Santos City
-            </span>
+
+          {/* Right Side: Simple Clean Text */}
+          <div className="flex flex-col gap-6">
+            <div className="space-y-4">
+              <p className="text-xl md:text-2xl font-bold text-slate-800 leading-relaxed">
+                I am a Full Stack Software Engineer with experience designing
+                and implementing scalable software solutions.
+              </p>
+              <div className="h-1 w-20 bg-indigo-600 rounded-full" />{" "}
+              {/* Subtle Divider */}
+            </div>
+
+            <p className="text-lg text-slate-600 leading-relaxed">
+              I have a strong background in software engineering and database
+              design, and I work effectively both independently and
+              collaboratively within a team.
+            </p>
           </div>
         </div>
-
-        <div className="md:mx-[15%] mx-4 sm:mx-8">
-          <span className="font-normal">
-            As a passionate student, I've embarked on a journey of self-learning
-            and discovery. Despite my academic commitments, I've successfully
-            completed 3 innovative projects on my own. These experiences have
-            not only honed my technical skills but also instilled in me a
-            profound appreciation for the power of self-education and
-            persistence. From web development to exploring new technologies, my
-            journey is a testament to what one can achieve with dedication and a
-            love for learning.
-          </span>
-        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

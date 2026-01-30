@@ -1,41 +1,64 @@
+import { Download, Github } from "lucide-react";
 import PROFILE from "../assets/profile-lester2.jpg";
-import LINKEDIN from "../assets/linked-in.png";
-import GITHUB from "../assets/github.png";
 
 const Main = () => {
   return (
-    <main className="md:flex mt-[10%] gap-20 justify-center">
-      <div className="flex justify-center">
-        <img src={PROFILE} alt="Profile" className="h-80 rounded-[50%]" />
-      </div>
-      <div className="flex flex-col gap-1 text-center mt-16">
-        <span className="text-lg font-normal">Hello, I'm</span>
-        <span className="text-3xl font-bold">John Lester Regalado</span>
-        <span className="text-2xl font-normal">Full Stack Developer</span>
-        <div className="flex gap-3 mt-3 justify-center">
-          <button className="border-2 border-black p-3 rounded-3xl text-sm font-bold hover:bg-black hover:text-white">
-          <a href="https://drive.google.com/file/d/1uwNOlBNC0kbGitZAWmYkvIMkDbUNgH7f/view?usp=sharing" target="_blank" download="Lester-Resume.pdf">
-            Download CV
-          </a>
-          </button>
-          <div className="flex gap-2 mt-2">
-            <a
-              href="https://www.linkedin.com/in/john-lester-regalado/"
-              target="_blank"
-            >
+    <section className="min-h-screen flex items-center justify-center py-24 lg:py-24 px-6 bg-white" id="main">
+      <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+        {/* Image Section - Simplified & Natural */}
+        <div className="flex justify-center order-1 lg:order-2">
+          <div className="relative group w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px]">
+            {/* Subtle soft glow behind image */}
+            <div className="absolute inset-0 bg-indigo-50 rounded-[2.5rem] translate-x-3 translate-y-3 -z-10 group-hover:translate-x-5 group-hover:translate-y-5 transition-transform duration-500" />
+
+            <div className="aspect-[4/5] overflow-hidden rounded-[2.5rem] border border-slate-100 shadow-xl bg-slate-50">
               <img
-                src={LINKEDIN}
-                alt="linked-in"
-                className="h-8 cursor-pointer"
+                src={PROFILE}
+                alt="profile"
+                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
+            </div>
+          </div>
+        </div>
+
+        {/* Text Content - Minimalist & Bold */}
+        <div className="flex flex-col gap-8 text-center lg:text-left order-2 lg:order-1">
+          <div className="space-y-3">
+            <p className="text-indigo-600 font-bold tracking-[0.15em] uppercase text-sm">
+              Full Stack Engineer
+            </p>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-tight">
+              John Lester <br />
+              <span className="text-indigo-600">Regalado</span>
+            </h1>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start pt-4">
+            <a
+              href="https://drive.google.com/file/d/1LRz5TbFPctLG5A-ysGUtwze3rgRaxVsn/view"
+              target="_blank"
+              className="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-indigo-600 transition-all shadow-lg hover:shadow-indigo-200 flex items-center justify-center gap-2"
+            >
+              <Download size={20} />
+              Download CV
             </a>
-            <a href="https://github.com/Kixx723" target="_blank">
-              <img src={GITHUB} alt="github" className="h-8 cursor-pointer" />
+
+            <a
+              href="https://github.com/Kixx723" // Replace with your actual GitHub link
+              target="_blank"
+              rel="noreferrer"
+              className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-slate-200 text-slate-900 rounded-2xl font-bold hover:border-indigo-600 hover:text-indigo-600 transition-all flex items-center justify-center gap-2 group"
+            >
+              <Github
+                size={20}
+                className="group-hover:rotate-12 transition-transform"
+              />
+              GitHub Profile
             </a>
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

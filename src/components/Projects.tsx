@@ -1,71 +1,95 @@
+import { ExternalLink, ArrowUpRight } from "lucide-react";
 import ETALLY from "../assets/e-tally-htc.png";
 import BORROWERSLIP from "../assets/borrower-slip.png";
 import MRTANKEE from "../assets/mrtankee-project.png";
 
 const Projects = () => {
-  return (
-    <div className="h-screen" id="projects">
-      <div className="flex flex-col text-center gap-1">
-        <span className="text-md font-medium text-purple-800">
-          Browse My Recent
-        </span>
-        <span className="text-4xl">Projects</span>
-      </div>
+  const projects = [
+    {
+      title: "E-Tally HTC",
+      category: "Full Stack / Capstone",
+      img: ETALLY,
+      link: "https://htc-event-app.onrender.com/",
+    },
+    {
+      title: "Borrower Slip",
+      category: "Internship Project",
+      img: BORROWERSLIP,
+      link: "https://gscwd-borrower-slip-online.vercel.app/",
+    },
+    {
+      title: "MrTankee",
+      category: "Internship Project",
+      img: MRTANKEE,
+      link: "https://mrtankee.vercel.app/",
+    },
+  ];
 
-      <div className="flex flex-col lg:flex-row gap-4 w-auto justify-center mt-[3%] mx-[5%]">
-        <div className="border-2 border-black p-10 rounded-2xl w-full">
-          <div className="flex flex-col gap-5 text-center items-center">
-            <img
-              src={ETALLY}
-              alt="e-tally"
-              className="w-full h-full rounded-2xl border-2 border-black"
-            />
-            <span className="font-bold text-2xl">1st Project</span>
-            <a
-              href="https://htc-event-app.onrender.com/"
-              target="_blank"
-              className="border-2 mx-[30%] py-2 px-4 rounded-3xl border-black font-semibold hover:bg-black hover:text-white cursor-pointer"
-            >
-              Live Demo
-            </a>
+  return (
+    <section className="py-24 bg-white" id="projects">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="space-y-3">
+            <p className="text-indigo-600 font-bold tracking-[0.2em] uppercase text-xs">
+              Portfolio
+            </p>
+            <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tight">
+              Selected <span className="text-indigo-600">Works.</span>
+            </h2>
           </div>
         </div>
-        <div className="border-2 border-black p-10 rounded-2xl w-full">
-          <div className="flex flex-col gap-5 text-center items-center">
-            <img
-              src={BORROWERSLIP}
-              alt="borrower-slip"
-              className="w-full h-full rounded-2xl border-2 border-black"
-            />
-            <span className="font-bold text-2xl">2nd Project</span>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+          {projects.map((project, i) => (
             <a
-              href="https://gscwd-borrower-slip-online.vercel.app/"
+              href={project.link}
               target="_blank"
-              className="border-2 mx-[30%] py-2 px-4 rounded-3xl border-black font-semibold hover:bg-black hover:text-white cursor-pointer"
+              rel="noreferrer"
+              key={i}
+              className="group relative"
             >
-              Live Demo
+              {/* The Accent Box - Shared Design Language */}
+              <div className="absolute inset-0 bg-indigo-50 rounded-[2.5rem] translate-x-3 translate-y-3 -z-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500" />
+
+              <div className="bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-sm group-hover:shadow-xl transition-all duration-500">
+                {/* Image Container */}
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={project.img}
+                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    alt={project.title}
+                  />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <div className="bg-white p-4 rounded-full scale-50 group-hover:scale-100 transition-transform duration-500">
+                      <ArrowUpRight className="text-slate-900" size={32} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Info */}
+                <div className="p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="px-4 py-1.5 bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider rounded-full">
+                      {project.category}
+                    </span>
+                    <ExternalLink
+                      size={18}
+                      className="text-slate-400 group-hover:text-indigo-600 transition-colors"
+                    />
+                  </div>
+                  <h3 className="text-3xl font-bold text-slate-900 leading-tight">
+                    {project.title}
+                  </h3>
+                </div>
+              </div>
             </a>
-          </div>
-        </div>
-        <div className="border-2 border-black p-10 rounded-2xl w-full">
-          <div className="flex flex-col gap-5 text-center items-center">
-            <img
-              src={MRTANKEE}
-              alt="mrtankee"
-              className="w-full h-full rounded-2xl border-2 border-black"
-            />
-            <span className="font-bold text-2xl">3rd Project</span>
-            <a
-              href="https://mrtankee.vercel.app/"
-              target="_blank"
-              className="border-2 mx-[30%] py-2 px-4 rounded-3xl border-black font-semibold hover:bg-black hover:text-white cursor-pointer"
-            >
-              Live Demo
-            </a>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,79 +1,93 @@
 import { Link } from "react-scroll";
+import { Mail, Linkedin, ArrowUp, Github } from "lucide-react";
 
 const Contact = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div
-      className="h-screen lg:mt-0 mt-[110%] flex flex-col items-center justify-evenly"
+    <footer
+      className="bg-white pt-24 pb-12 border-t border-slate-100"
       id="contact"
     >
-      <div>
-        <div className="flex flex-col text-center gap-1">
-          <span className="text-md font-medium text-purple-800">
-            Get In Touch
-          </span>
-          <span className="text-4xl">Contact Me</span>
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Contact Heading Section */}
+        <div className="text-center space-y-4 mb-16">
+          <p className="text-indigo-600 font-bold tracking-[0.2em] uppercase text-xs">
+            Connect
+          </p>
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight">
+            Get In <span className="text-indigo-600">Touch.</span>
+          </h2>
         </div>
 
-        <div className="w-auto border-2 border-slate-900 mt-[10%] p-4 flex justify-center gap-5 rounded-3xl">
-          <div className="flex gap-2">
-            <a href="mailto:janjanregalado1@gmail.com">
-              <span className="material-symbols-outlined text-lg cursor-pointer">
-                mail
-              </span>
-            </a>
-            <a href="mailto:janjanregalado1@gmail.com">
-              <span className="text-md font-semibold cursor-pointer">
+        {/* Contact Info Cards */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-24">
+          <a
+            href="mailto:janjanregalado1@gmail.com"
+            className="group w-full max-w-sm p-6 bg-slate-50 border border-slate-100 rounded-3xl flex items-center gap-4 hover:bg-white hover:shadow-xl hover:shadow-indigo-50 hover:-translate-y-1 transition-all duration-300"
+          >
+            <div className="p-3 bg-white rounded-2xl text-indigo-600 shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+              <Mail size={24} />
+            </div>
+            <div>
+              <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">
+                Email Me
+              </p>
+              <p className="text-slate-900 font-bold">
                 janjanregalado1@gmail.com
-              </span>
-            </a>
-          </div>
-          <div className="flex gap-2">
-            <a
-              href="https://www.linkedin.com/in/john-lester-regalado-147847271/"
-              target="_blank"
-            >
-              <span className="material-symbols-outlined text-lg cursor-pointer">
-                mail
-              </span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/john-lester-regalado-147847271/"
-              target="_blank"
-            >
-              <span className="text-md font-semibold cursor-pointer">
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/john-lester-regalado-147847271/"
+            target="_blank"
+            rel="noreferrer"
+            className="group w-full max-w-sm p-6 bg-slate-50 border border-slate-100 rounded-3xl flex items-center gap-4 hover:bg-white hover:shadow-xl hover:shadow-indigo-50 hover:-translate-y-1 transition-all duration-300"
+          >
+            <div className="p-3 bg-white rounded-2xl text-indigo-600 shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+              <Linkedin size={24} />
+            </div>
+            <div>
+              <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">
                 LinkedIn
-              </span>
-            </a>
-          </div>
+              </p>
+              <p className="text-slate-900 font-bold">John Lester Regalado</p>
+            </div>
+          </a>
+        </div>
+
+        {/* Footer Navigation & Copyright */}
+        <div className="pt-12 border-t border-slate-100 flex flex-col items-center gap-10">
+          {/* Quick Links */}
+          <ul className="flex flex-wrap justify-center gap-x-10 gap-y-4">
+            {["about", "experience", "projects"].map((item) => (
+              <li key={item}>
+                <Link
+                  to={item}
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  className="text-slate-500 font-bold uppercase tracking-widest text-sm hover:text-indigo-600 cursor-pointer transition-colors"
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+            <li>
+              {/* Scroll to top link */}
+              <Link
+                to="main"
+                smooth={true}
+                className="text-indigo-600 font-bold uppercase tracking-widest text-sm cursor-pointer flex items-center gap-1"
+              >
+                Top <ArrowUp size={14} />
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
-
-      <div className="flex flex-col items-center gap-5">
-        <ul className="list-none md:flex text-2xl gap-5 hidden h-12">
-          <li className="pb-2 hover:text-purple-400 hover:border-b-4 hover:border-purple-300 cursor-pointer">
-            <Link to="about" smooth={true} duration={500} offset={-50}>
-              About
-            </Link>
-          </li>
-          <li className="pb-2 hover:text-purple-400 hover:border-b-4 hover:border-purple-300 cursor-pointer">
-            <Link to="experience" smooth={true} duration={500} offset={-50}>
-              Experience
-            </Link>
-          </li>
-          <li className="pb-2 hover:text-purple-400 hover:border-b-4 hover:border-purple-300 cursor-pointer">
-            <Link to="projects" smooth={true} duration={500} offset={-50}>
-              Projects
-            </Link>
-          </li>
-          <li className="pb-2 hover:text-purple-400 hover:border-b-4 hover:border-purple-300 cursor-pointer">
-            Contact
-          </li>
-        </ul>
-        <span className="text-center">
-          Copyright © 2024 John Lester Regalado Portfolio. All Right Reserved
-        </span>
-      </div>
-    </div>
+    </footer>
   );
 };
 
