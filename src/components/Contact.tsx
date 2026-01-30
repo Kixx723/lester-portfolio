@@ -1,8 +1,7 @@
 import { Link } from "react-scroll";
-import { Mail, Linkedin, ArrowUp, Github } from "lucide-react";
+import { Mail, Linkedin, ArrowUp } from "lucide-react";
 
 const Contact = () => {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer

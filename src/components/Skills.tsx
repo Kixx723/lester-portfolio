@@ -42,7 +42,7 @@ const Skills = () => {
 
         {/* Grid Section - Responsive Columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {stack.map((group, index) => (
+          {stack.map((group) => (
             <div key={group.title} className="relative group h-full">
               {/* Background Glow Effect on Hover */}
               <div
